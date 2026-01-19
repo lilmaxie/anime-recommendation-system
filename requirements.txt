@@ -1,0 +1,8 @@
+setuptools
+pandas
+numpy
+google-cloud-storage
+pyyaml
+tensorflow
+comet-ml
+dvc

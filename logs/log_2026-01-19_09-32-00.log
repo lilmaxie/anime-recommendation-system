@@ -1,0 +1,24 @@
+2026-01-19 09:32:22,770 - INFO - DataProcessing Intialized
+2026-01-19 09:32:23,563 - INFO - Data loaded sucesfully for Data Processing
+2026-01-19 09:32:23,728 - INFO - Filtered users sucesfully...
+2026-01-19 09:32:24,685 - INFO - Scalind done for Processing 
+2026-01-19 09:32:24,808 - INFO - Encoding done for Users and Anime
+2026-01-19 09:32:25,332 - INFO - Data splitted successfully into train and test sets
+2026-01-19 09:32:25,347 - INFO - user2user_encoded saved sucesfully in processed directory
+2026-01-19 09:32:25,361 - INFO - user2user_decoded saved sucesfully in processed directory
+2026-01-19 09:32:25,413 - INFO - anime2anime_encoded saved sucesfully in processed directory
+2026-01-19 09:32:25,468 - INFO - anime2anime_decoded saved sucesfully in processed directory
+2026-01-19 09:32:29,236 - INFO - All the training testing data as well as rating_df is saved now...
+2026-01-19 09:32:35,437 - INFO - DF AND SYNOPSIS_Df saved sucesfullyy...
+2026-01-19 09:32:35,439 - INFO - Data Processing Pipeline Run sucesfully ... Congrats
+2026-01-19 09:32:44,429 - INFO - Model Training & COMET ML initialized...
+2026-01-19 09:32:44,520 - INFO - Data loaded successfully for Model Training
+2026-01-19 09:32:44,595 - INFO - Succesfully read the YAML file
+2026-01-19 09:32:44,595 - INFO - Loaded configuration from config.yaml
+2026-01-19 09:32:44,747 - INFO - Model created successfully...
+2026-01-19 09:33:20,322 - INFO - Model training Completed...
+2026-01-19 09:33:20,322 - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2026-01-19 09:33:20,370 - INFO - Model saved to artifacts/model\model.h5
+2026-01-19 09:33:20,373 - INFO - Extracting weights for user_embedding
+2026-01-19 09:33:20,380 - INFO - Extracting weights for anime_embedding
+2026-01-19 09:33:20,440 - INFO - User and Anime weights saved successfully...
