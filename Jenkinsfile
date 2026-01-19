@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         VENV_DIR = 'venv'
-        // GCP_PROJECT = 'mlops-new-447207'
-        // GCLOUD_PATH = "/var/jenkins_home/google-cloud-sdk/bin"
+        GCP_PROJECT = 'omega-branch-483602-k3'
+        GCLOUD_PATH = "/var/jenkins_home/google-cloud-sdk/bin"
         // KUBECTL_AUTH_PLUGIN = "/usr/lib/google-cloud-sdk/bin"
     }
 
@@ -33,14 +33,15 @@ pipeline {
             }
         }
 
-        stage('DVC Pull'){
+stage('DVC Pull'){
             steps{
                 withCredentials([file(credentialsId:'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
                     script{
                         echo 'DVC Pull...'
                         sh '''
                         . ${VENV_DIR}/bin/activate
-                        dvc pull
+                        # Thêm flag --force vào đây
+                        dvc pull --force
                         '''
                     }
                 }
