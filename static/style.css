@@ -1,0 +1,370 @@
+/* Import anime-style fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bangers&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    position: relative;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* Animated background gradient */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Anime-style decorative sparkles */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 80px 80px, 40px 40px;
+    background-position: 0 0, 40px 40px;
+    animation: sparkle 30s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes sparkle {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-100px) rotate(360deg); }
+}
+
+/* Main container */
+.form-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 50px 40px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
+    border-radius: 35px;
+    box-shadow: 
+        0 25px 70px rgba(0, 0, 0, 0.4),
+        0 0 0 2px rgba(255, 255, 255, 0.8) inset,
+        0 0 150px rgba(118, 75, 162, 0.6);
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    animation: containerFloat 6s ease-in-out infinite;
+}
+
+@keyframes containerFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Decorative corner elements */
+.form-container::before {
+    content: '⭐';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 40px;
+    animation: rotate 4s linear infinite;
+}
+
+.form-container::after {
+    content: '✨';
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    font-size: 40px;
+    animation: rotate 4s linear infinite reverse;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Header styling */
+h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.8em;
+    text-align: center;
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 5s ease infinite;
+    margin-bottom: 35px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+    position: relative;
+}
+
+@keyframes gradientText {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    margin: 15px auto 0;
+    border-radius: 2px;
+    animation: expandLine 2s ease-in-out infinite;
+}
+
+@keyframes expandLine {
+    0%, 100% { width: 100px; }
+    50% { width: 200px; }
+}
+
+/* Form styling */
+form {
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 18px 25px;
+    font-size: 1.1em;
+    border: 3px solid #e0e0e0;
+    border-radius: 20px;
+    outline: none;
+    transition: all 0.4s ease;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    box-shadow: 
+        inset 0 2px 5px rgba(0, 0, 0, 0.05),
+        0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+input[type="number"]:focus {
+    border-color: #764ba2;
+    box-shadow: 
+        0 0 0 5px rgba(118, 75, 162, 0.2),
+        inset 0 2px 5px rgba(0, 0, 0, 0.05),
+        0 10px 30px rgba(118, 75, 162, 0.3);
+    transform: translateY(-2px);
+}
+
+input[type="number"]:hover {
+    border-color: #667eea;
+}
+
+/* Button styling */
+button[type="submit"] {
+    width: 100%;
+    padding: 18px 30px;
+    font-size: 1.3em;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 
+        0 10px 30px rgba(118, 75, 162, 0.4),
+        0 0 0 0 rgba(118, 75, 162, 0.5);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button[type="submit"]:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 15px 40px rgba(118, 75, 162, 0.5),
+        0 0 0 5px rgba(118, 75, 162, 0.2);
+}
+
+button[type="submit"]:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 5px 20px rgba(118, 75, 162, 0.4);
+}
+
+/* Results container */
+.results-container {
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(145deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 25px;
+    border: 2px solid rgba(118, 75, 162, 0.3);
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #764ba2;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* List styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    padding: 18px 25px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border-left: 5px solid #764ba2;
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(118, 75, 162, 0.1);
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #4a4a4a;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+li:nth-child(1) { animation-delay: 0.1s; }
+li:nth-child(2) { animation-delay: 0.2s; }
+li:nth-child(3) { animation-delay: 0.3s; }
+li:nth-child(4) { animation-delay: 0.4s; }
+li:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+li::before {
+    content: '🎬';
+    margin-right: 12px;
+    font-size: 1.2em;
+}
+
+li:hover {
+    transform: translateX(10px);
+    box-shadow: 
+        0 8px 25px rgba(118, 75, 162, 0.3),
+        0 0 0 1px rgba(118, 75, 162, 0.2);
+    border-left-width: 8px;
+    background: linear-gradient(90deg, rgba(118, 75, 162, 0.05), white);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 35px 25px;
+        margin: 30px auto;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    label {
+        font-size: 1.1em;
+    }
+
+    input[type="number"],
+    button[type="submit"] {
+        font-size: 1em;
+        padding: 15px 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    li {
+        font-size: 1em;
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .form-container {
+        padding: 25px 20px;
+    }
+}

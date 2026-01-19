@@ -10,12 +10,23 @@ import sys
 logger = get_logger(__name__)
 
 class DataProcessor:
+    """
+    DataProcessor class to handle data processing tasks for the Anime Recommender System.
+    Attributes:
+        input_file (str): Path to the input CSV file containing raw data.
+        output_dir (str): Directory to save processed artifacts.
+    Methods:
+        load_data(usecols): Loads data from the input CSV file.
+        filter_users(min_rating): Filters out users with fewer than min_rating ratings.
+        scale_ratings(): Scales the ratings to a range between 0 and 1.
+        encode_data(): Encodes user IDs and anime IDs to sequential integers.
+        split_data(test_size, random_state): Splits the data into training and testing sets.
+        save_artifacts(): Saves the processed artifacts to the output directory.
+        process_anime_data(): Processes the anime and anime synopsis data and saves them as CSV files.
+        run(): Runs the complete data processing pipeline.
+    """
+    
     def __init__(self, input_file, output_dir):
-        """
-        input_file : str : path to the input CSV file containing user-anime ratings
-        output_dir : str : path to the directory where processed artifacts will be saved
-        Initializes the DataProcessor with input file and output directory.
-        """
         self.input_file = input_file
         self.output_dir =  output_dir
 

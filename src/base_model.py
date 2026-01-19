@@ -7,6 +7,10 @@ from src.custom_exception import CustomException
 logger = get_logger(__name__)
 
 class BaseModel:
+    """
+    BaseModel class to create recommendation model using Keras.
+    """
+    
     def __init__(self, config_path):
         try:
             self.config = read_yaml(config_path)
@@ -25,6 +29,7 @@ class BaseModel:
         Returns:
         model (Model): Compiled Keras model for recommendations.
         """
+        
         try:
             embedding_size = self.config["model"]["embedding_size"]
 

@@ -7,6 +7,12 @@ import pandas as pd
 logger = get_logger(__name__)
 
 def read_yaml(file_path):
+    """
+    This function reads a YAML file and returns its contents as a dictionary.
+    file_path : str : path to the YAML file
+    Returns a dictionary containing the YAML file contents.
+    """
+    
     try:
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"File is not in the given path")

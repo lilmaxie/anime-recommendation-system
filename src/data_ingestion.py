@@ -9,6 +9,17 @@ from utils.common_functions import read_yaml
 logger = get_logger(__name__)
 
 class DataIngestion:
+    """
+    DataIngestion class to handle downloading CSV files from GCP Cloud Storage.
+    Attributes:
+        bucket_name (str): Name of the GCP storage bucket.
+        file_names (list): List of file names to download from the bucket.
+        output_dir (str): Directory to save the downloaded files.
+    Methods:
+        download_csv_from_gcp(): Downloads specified CSV files from GCP bucket.
+        run(): Executes the data ingestion process.
+    """
+    
     def __init__(self,config):
         self.config = config["data_ingestion"]
         self.bucket_name = self.config["bucket_name"]
